@@ -35,4 +35,4 @@ For some undetermined reason when deleting a subscriber the table does not updat
 
 ## Adaptation
 
-To adapt this project for your account, simply open main.py and template.js, locate listID and apiID and change them according to your values that you can found in your Campaign Monitor account.
+To adapt this project for your account, simply open main.py and template.js, locate listID and apiID and change them according to your values that you can find in your Campaign Monitor account.
