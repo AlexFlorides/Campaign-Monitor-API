@@ -1,0 +1,75 @@
+<!-- Alexandros Florides -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Campaign Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+    <script src="{{ url_for('static', filename='js/template.js') }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>Campaign Monitor</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <h1 class="logo">Campaign Monitor</h1>
+        <hr/>
+      </div>
+    </header>
+
+    <!-- allow jinja content -->
+    {% block content %}
+    
+    <div class="tabletitleclass">
+    <h2 class=table_title> Active Subscribers </h1>
+    
+    <!-- fill table with data received from flask app -->
+    {% if subscriber %}
+    <table id="myTable">
+      <tr>
+        <th>Full Name</th>
+        <th>Email Address</th>
+        <th>Action</th>
+      </tr>
+
+      <!-- loop through dictionary to show data into table -->
+        {% for key, value in subscriber.items() %}
+            <tr>
+              <td>{{value|string}}</td>
+              <td>{{key}}</td>
+              <td id="action"><button onclick="btndelete('{{key}}');">Delete</button></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+      <h1>No Subscribers Yet!</h1>
+    {% endif %}
+  </div>
+
+    <div class="form">
+      <h2>Add Subscriber Form</h2>
+      <!-- form with POST method for adding new subscriber -->
+      <form action="/" method="POST">
+        <p>Full Name: <input type="text" name="Full_Name" id="valName" required/></p>
+        <p>Email Address: <input type="text" name="Email_Address" id="valEmail" required/></p>
+        <p><input type="submit" value="Add Subscriber" /></p>
+      </form>
+    </div>
+
+    <!-- show messages send from server using flash() -->
+    {% for message in get_flashed_messages() %}
+      <script>
+        alert("{{message}}")
+      </script>
+    {% endfor %}
+
+    {% endblock %}
+
+  </body>
+</html>
+
+<!-- Alexandros Florides -->

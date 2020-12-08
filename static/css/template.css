@@ -1,0 +1,67 @@
+/* Alexandros Florides */
+
+body {
+  background-color: lightgreen;
+}
+
+h1.logo {
+    padding: 10px;
+    padding-left: 0%;
+    text-align: center;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgb(31, 107, 170);
+  margin: 1em 0;
+  padding: 0;
+}
+
+table {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  border: black;
+    border-style: solid;
+}
+
+.tabletitleclass {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    float: left;
+    margin: 0 auto;
+  }
+
+  table tr th, #action {
+    text-align: center;
+  }
+
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border: black;
+    border-style: solid;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  tr:nth-child(odd) {
+    background-color: lightseagreen;
+  }
+
+.form {
+    width: 50%;
+    text-align: center;
+    /* background-color: chocolate; */
+    float: right;
+}
+
+/* Alexandros Florides */
